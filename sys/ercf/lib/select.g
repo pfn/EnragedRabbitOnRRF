@@ -15,23 +15,14 @@ while var.axis == -1
 if var.axis == -1
   abort "Cannot find selector axis"
 
-var slot_position = 0
-if param.S == 0
-  set var.slot_position = global.ercf_slot0_pos
-elif param.S == 1
-  set var.slot_position = global.ercf_slot1_pos
-elif param.S == 2
-  set var.slot_position = global.ercf_slot2_pos
-elif param.S == 3
-  set var.slot_position = global.ercf_slot3_pos
-elif param.S == 4
-  set var.slot_position = global.ercf_slot4_pos
-elif param.S == 5
-  set var.slot_position = global.ercf_slot5_pos
-else
-  abort {"Invalid slot selected: " ^ param.S}
-
-echo >{global.ercf_tmp_file} "G92 " ^ global.ercf_selector_axis ^ move.axes[var.axis].userPosition
-echo >>{global.ercf_tmp_file} "G1 F6000 " ^ global.ercf_selector_axis ^ var.slot_position
+echo >{global.ercf_tmp_file} "var slot_position = 0"
+echo >>{global.ercf_tmp_file} "if !exists(global.ercf_slot" ^ param.S ^ "_pos)"
+echo >>{global.ercf_tmp_file} "  abort ""Invalid slot selected: " ^ param.S ^ """"
+echo >>{global.ercf_tmp_file} "set var.slot_position = global.ercf_slot" ^ param.S ^ "_pos"
+echo >>{global.ercf_tmp_file} "set global.ercf_selector_pos = " ^ param.S
+echo >>{global.ercf_tmp_file} "G92 " ^ global.ercf_selector_axis ^ move.axes[var.axis].userPosition
+echo >>{global.ercf_tmp_file} "G1 F6000 " ^ global.ercf_selector_axis ^ "{var.slot_position}"
 echo >>{global.ercf_tmp_file} "M84 " ^ global.ercf_selector_axis
+
+G90
 M98 P"ercf/lib/execute-tmp.g"

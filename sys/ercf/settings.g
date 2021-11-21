@@ -1,3 +1,4 @@
-set global.ercf_servo_disengage = 0
-set global.ercf_servo_engage = 90
-set global.ercf_extruder_axis = "Y"
+M584 U4 V2
+set global.ercf_selector_axis = "U"
+set global.ercf_extruder_axis = "V"
+set global.ercf_extruder_current = 800

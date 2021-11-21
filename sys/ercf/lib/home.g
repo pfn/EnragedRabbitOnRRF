@@ -9,3 +9,4 @@ echo >>{global.ercf_tmp_file} "M84 " ^ global.ercf_selector_axis
 G91               ; relative positioning
 M98 P"ercf/lib/execute-tmp.g"
 G90               ; absolute positioning
+M98 P"ercf/lib/select.g" S0
