@@ -15,6 +15,8 @@ Edit `ercf/settings.g` to configure the drive assignments (`M584`).
 Stepper motor configuration, `M569`, can be done in `config.g` or
 `ercf/settings.g`
 
+In order to run these macros, RRF 3.4b3 or newer *must* be used
+
 ### Configuration
 
 Many variables can be configured in `ercf/settings.g`, reference
