@@ -1,8 +1,8 @@
 if !exists(param.S)
   abort "No Slot selected"
 
-if exists(global.ercf_servo_engaged) && global.ercf_servo_engaged
-  abort "Cannot select while servo engaged"
+if !exists(param.H) || param.H != 1
+  M98 P"ercf/lib/assert-empty.g"
 
 var axis = -1
 
@@ -26,3 +26,4 @@ echo >>{global.ercf_tmp_file} "M84 " ^ global.ercf_selector_axis
 
 G90
 M98 P"ercf/lib/execute-tmp.g"
+M98 P"ercf/lib/filament-sensing.g"

@@ -2,6 +2,10 @@
 ; value overrides should go in ercf/settings.g
 if !exists(global.ercf_settings_loaded)
   ;
+  ; bowden settings
+  ;
+  global ercf_bowden_length = 525
+  ;
   ; selector axis settings
   ;
   global ercf_selector_axis = "U"
@@ -16,6 +20,9 @@ if !exists(global.ercf_settings_loaded)
   global ercf_extruder_axis = "V"
   global ercf_extruder_current = 800
   global ercf_extruder_steps = 574.28
+  global ercf_extruder_gear_diameter = 8.25
+  global ercf_extruder_park = 40
+  global ercf_extruder_retract_park = 35
   ;
   ; selector servo settings
   ;
@@ -24,7 +31,9 @@ if !exists(global.ercf_settings_loaded)
   global ercf_servo_disengage = 0
   global ercf_servo_engage = 90
   ;
-  ; filament block positions
+  ; filament block positions, additional blocks can be added and removed
+  ; additional definitions can go here or in settings.g
+  ; removed blocks should be commented/deleted out of this file
   ;
   global ercf_slot0_pos = 2
   global ercf_slot1_pos = 23
@@ -37,13 +46,14 @@ if !exists(global.ercf_settings_loaded)
   ;
   global ercf_encoder_pin = "e0stop"
   global ercf_encoder_trigger = 2
-  global ercf_pulse_distance = 1.43
+  global ercf_pulse_distance = 1.415
   ;
   ; DO NOT EDIT
   ; non-configurable system state variables
   ;
   global ercf_pulse_count = 0
+  global ercf_extruder_loaded = false
   global ercf_tmp_file = "ercf/lib/tmp.g"
   global ercf_selector_pos = -1
   global ercf_servo_engaged = false
-  global ercf_settings_loaded = 1
+  global ercf_settings_loaded = true
