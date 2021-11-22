@@ -1,0 +1,10 @@
+.rrf_mirror
+macros/*
+!macros/ERCF/
+sys/*.g
+sys/accelerometer/
+sys/*.csv
+sys/*.json
+*.bin
+*.gz
+*.bak
