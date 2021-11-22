@@ -1,8 +1,14 @@
+if global.ercf_selector_pos == -1 && (!exists(param.H) || param.H != 1)
+  abort "Home selector first"
+
 if !exists(param.S)
   abort "No Slot selected"
 
 if !exists(param.H) || param.H != 1
   M98 P"ercf/lib/assert-empty.g"
+
+if global.ercf_servo_engaged
+  M98 P"ercf/lib/disengage.g"
 
 var axis = -1
 

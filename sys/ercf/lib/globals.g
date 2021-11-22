@@ -23,6 +23,8 @@ if !exists(global.ercf_settings_loaded)
   global ercf_extruder_gear_diameter = 8.25
   global ercf_extruder_park = 40
   global ercf_extruder_retract_park = 35
+  global ercf_extruder_slow_speed = 1200
+  global ercf_extruder_fast_speed = 2400
   ;
   ; selector servo settings
   ;

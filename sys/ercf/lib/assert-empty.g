@@ -6,4 +6,5 @@ if global.ercf_extruder_loaded || global.ercf_selector_pos == -1
   if var.pulse_count != global.ercf_pulse_count
     M98 P"ercf/lib/disengage.g"
     abort "Filament already loaded, unload first"
+  set global.ercf_extruder_loaded = false
   M98 P"ercf/lib/disengage.g"

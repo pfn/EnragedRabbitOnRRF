@@ -1,0 +1,19 @@
+M98 P"ercf/lib/home.g"
+M98 P"ercf/lib/select.g" S1
+M98 P"ercf/lib/load.g"
+G4 S1
+M98 P"ercf/lib/unload.g"
+
+
+M98 P"ercf/lib/select.g" S3
+M98 P"ercf/lib/load.g"
+G4 S1
+M98 P"ercf/lib/unload.g"
+
+
+M98 P"ercf/lib/select.g" S4
+M98 P"ercf/lib/load.g"
+G4 S1
+M98 P"ercf/lib/unload.g"
+
+M98 P"ercf/lib/home.g"
