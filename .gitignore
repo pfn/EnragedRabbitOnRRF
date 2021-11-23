@@ -3,6 +3,7 @@ macros/*
 !macros/ERCF/
 sys/*.g
 sys/accelerometer/
+sys/k/
 sys/*.csv
 sys/*.json
 *.bin
