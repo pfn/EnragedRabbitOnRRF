@@ -2,9 +2,10 @@
 ; value overrides should go in ercf/settings.g
 if !exists(global.ercf_settings_loaded)
   ;
-  ; bowden settings
+  ; general settings
   ;
   global ercf_bowden_length = 525
+  global ercf_tool_number = 0
   ;
   ; selector axis settings
   ;
@@ -20,7 +21,7 @@ if !exists(global.ercf_settings_loaded)
   global ercf_extruder_axis = "V"
   global ercf_extruder_current = 800
   global ercf_extruder_steps = 574.28
-  global ercf_extruder_gear_diameter = 8.25
+  global ercf_extruder_gear_diameter = 7.35
   global ercf_extruder_park = 40
   global ercf_extruder_retract_park = 35
   global ercf_extruder_slow_speed = 1200
@@ -56,6 +57,7 @@ if !exists(global.ercf_settings_loaded)
   global ercf_pulse_count = 0
   global ercf_extruder_loaded = false
   global ercf_tmp_file = "ercf/lib/tmp.g"
+  global ercf_selector_file = "ercf/lib/selector-pos.g"
   global ercf_selector_pos = -1
   global ercf_servo_engaged = false
   global ercf_settings_loaded = true

@@ -12,10 +12,13 @@ var pulse_count = global.ercf_pulse_count
 ;  abort "Filament already unloaded"
 ;M98 P"ercf/lib/disengage.g"
 
+T{global.ercf_tool_number}
+M302 P1
 G1 E{-(10 + global.ercf_extruder_gear_diameter + global.ercf_extruder_park)} F{global.ercf_extruder_slow_speed}
 while global.ercf_pulse_count > 0
   set global.ercf_pulse_count = 0
   G1 E-5 F{global.ercf_extruder_slow_speed}
+M302 P0
 
 M98 P"ercf/lib/engage.g"
 set global.ercf_pulse_count = 0
@@ -46,3 +49,5 @@ M84 E0
 M98 P"ercf/lib/disengage.g"
 
 G90
+
+M98 P"ercf/lib/filament-sensing.g"

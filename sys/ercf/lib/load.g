@@ -55,14 +55,19 @@ while var.pulse_count != global.ercf_pulse_count
 
 set var.pulse_count = global.ercf_pulse_count
 echo >{global.ercf_tmp_file} "var pulse_count = global.ercf_pulse_count"
-echo >>{global.ercf_tmp_file} "G1 F" ^ global.ercf_extruder_slow_speed ^ " E10 " ^ global.ercf_extruder_axis ^ global.ercf_extruder_gear_diameter
+echo >>{global.ercf_tmp_file} "M302 P1"
+echo >>{global.ercf_tmp_file} "G1 F" ^ global.ercf_extruder_slow_speed ^ " E" ^ global.ercf_extruder_gear_diameter ^ " " ^ global.ercf_extruder_axis ^ global.ercf_extruder_gear_diameter
+echo >>{global.ercf_tmp_file} "M400"
 echo >>{global.ercf_tmp_file} "M98 P""ercf/lib/disengage.g"""
 echo >>{global.ercf_tmp_file} "set var.pulse_count = global.ercf_pulse_count"
-echo >>{global.ercf_tmp_file} "G1 F" ^ global.ercf_extruder_fast_speed ^ " E5"
+echo >>{global.ercf_tmp_file} "G1 F" ^ global.ercf_extruder_slow_speed ^ " E5"
 echo >>{global.ercf_tmp_file} "M400"
 echo >>{global.ercf_tmp_file} "if var.pulse_count == global.ercf_pulse_count"
+echo >>{global.ercf_tmp_file} "  M302 P0"
 echo >>{global.ercf_tmp_file} "  abort ""Load into extruder failed"""
-echo >>{global.ercf_tmp_file} "G1 F" ^ global.ercf_extruder_fast_speed ^ " E" ^ {global.ercf_extruder_park}
+echo >>{global.ercf_tmp_file} "G1 F" ^ global.ercf_extruder_slow_speed ^ " E" ^ {global.ercf_extruder_park}
+echo >>{global.ercf_tmp_file} "M302 P0"
+T{global.ercf_tool_number}
 M98 P"ercf/lib/execute-tmp.g"
 
 set global.ercf_extruder_loaded = true
@@ -72,3 +77,4 @@ M98 P"ercf/lib/execute-tmp.g"
 M98 P"ercf/lib/disengage.g"
 
 G90
+M98 P"ercf/lib/filament-sensing.g"

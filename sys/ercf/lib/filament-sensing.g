@@ -1,3 +1,5 @@
+M584 P{#move.axes - 2} ; hide ERCF axes
+
 M591 D0 S0 P0
 M581 T{global.ercf_encoder_trigger} P-1
 M950 J{global.ercf_encoder_trigger} C"nil"

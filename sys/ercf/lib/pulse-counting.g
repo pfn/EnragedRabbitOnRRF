@@ -8,3 +8,5 @@ M581 T{global.ercf_encoder_trigger} P-1
 M950 J{global.ercf_encoder_trigger} C{global.ercf_encoder_pin}
 M581 T{global.ercf_encoder_trigger} P{global.ercf_encoder_trigger}
 echo >{"trigger" ^ global.ercf_encoder_trigger ^ ".g"} "set global.ercf_pulse_count = global.ercf_pulse_count + 1"
+
+M584 P{#move.axes} ; allow operating on ERCF axes
