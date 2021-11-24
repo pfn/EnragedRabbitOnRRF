@@ -59,7 +59,7 @@ if !exists(global.ercf_settings_loaded)
   global ercf_pulse_count = 0
   global ercf_extruder_loaded = false
   global ercf_tmp_file = "ercf/lib/tmp.g"
-  global ercf_selector_file = "ercf/lib/selector-pos.g"
+  global ercf_selector_file = "ercf/lib/selector-state.g"
   global ercf_selector_pos = -1
   global ercf_servo_engaged = false
   global ercf_settings_loaded = true
