@@ -22,6 +22,8 @@ if !exists(global.ercf_settings_loaded)
   global ercf_extruder_current = 800
   global ercf_extruder_steps = 574.28
   global ercf_extruder_gear_diameter = 7.35
+  ; calculated as gear bottom to stopping location - 5
+  ; this should be where the filament can be moved while cold
   global ercf_extruder_park = 40
   global ercf_extruder_retract_park = 35
   global ercf_extruder_slow_speed = 1200
@@ -49,7 +51,7 @@ if !exists(global.ercf_settings_loaded)
   ;
   global ercf_encoder_pin = "e0stop"
   global ercf_encoder_trigger = 2
-  global ercf_pulse_distance = 1.415
+  global ercf_pulse_distance = 1.458
   ;
   ; DO NOT EDIT
   ; non-configurable system state variables

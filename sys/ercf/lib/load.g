@@ -71,6 +71,7 @@ T{global.ercf_tool_number}
 M98 P"ercf/lib/execute-tmp.g"
 
 set global.ercf_extruder_loaded = true
+M98 P"ercf/lib/save-selector-state.g"
 
 echo >{global.ercf_tmp_file} "M84 E0 " ^ global.ercf_extruder_axis
 M98 P"ercf/lib/execute-tmp.g"

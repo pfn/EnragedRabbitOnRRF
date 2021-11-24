@@ -44,6 +44,7 @@ if var.pulse_count != global.ercf_pulse_count
   M98 P"ercf/lib/unload-selector.g"
 
 set global.ercf_extruder_loaded = false
+M98 P"ercf/lib/save-selector-state.g"
 
 M84 E0
 M98 P"ercf/lib/disengage.g"

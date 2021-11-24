@@ -1,6 +1,6 @@
 M98 P"ercf/lib/globals.g"
 M98 P"ercf/settings.g"
-M98 P"ercf/lib/selector-pos.g"
+M98 P{global.ercf_selector_file}
 M950 S{global.ercf_servo_num} C{global.ercf_servo_pin}
 echo >{global.ercf_tmp_file} "M906 " ^ global.ercf_extruder_axis ^ global.ercf_extruder_current ^ " " ^ global.ercf_selector_axis ^ global.ercf_selector_current
 echo >>{global.ercf_tmp_file} "M350 " ^ global.ercf_extruder_axis ^ "16 " ^ global.ercf_selector_axis ^ "16"
