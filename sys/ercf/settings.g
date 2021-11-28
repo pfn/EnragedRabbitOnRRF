@@ -9,11 +9,11 @@ set global.ercf_extruder_axis = "V"
 
 set global.ercf_bowden_length = 785
 set global.ercf_extruder_gear_diameter = 11.4 ; orbiter filament gear diameter
-set global.ercf_extruder_slow_speed = 1200
-;set global.ercf_extruder_fast_speed = 5400
-set global.ercf_extruder_fast_speed = 2400
+set global.ercf_extruder_slow_speed = 2400
+set global.ercf_extruder_fast_speed = 9000
 set global.ercf_extruder_current = 800
-set global.ercf_extruder_park = 15
+set global.ercf_selector_current = 565
+set global.ercf_extruder_park = 20
 set global.ercf_selector_endstop_pin = "^io3.out"
 set global.ercf_servo_num = 2
 set global.ercf_servo_pin = "io4.out"

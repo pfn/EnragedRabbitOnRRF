@@ -1,5 +1,15 @@
-if !global.ercf_extruder_loaded && global.ercf_selector_pos != -1
-  abort "Filament is not loaded"
+M98 R1
+
+if state.macroRestarted
+  if global.ercf_extruder_loaded
+    if state.status == "processing"
+      M291 P"Filament not yet unloaded" "Filament Unload" S0
+      M226
+  M99
+
+if !exists(param.F) && !global.ercf_extruder_loaded && global.ercf_selector_pos != -1
+  echo "Filament is not loaded"
+  M99
   
 ;M98 P"ercf/lib/engage.g"
 M98 P"ercf/lib/pulse-counting.g"
@@ -32,14 +42,19 @@ echo >>{global.ercf_tmp_file} "G1 F" ^ global.ercf_extruder_fast_speed ^ " " ^ g
 echo >>{global.ercf_tmp_file} "M400"
 G91
 while global.ercf_pulse_count < var.expected
-  if iterations > 5
+  if iterations > 2
     echo {"ercf_bowden_length too high? measured " ^ (global.ercf_pulse_distance * global.ercf_pulse_count)}
     break
   set var.pulse_count = global.ercf_pulse_count
   M98 P{global.ercf_tmp_file}
   if var.pulse_count == global.ercf_pulse_count
-    echo "No filament movement detected during unload"
-    break
+    if state.status == "processing"
+      M291 P"No filament movement detected during unload" R"Filament Load" S1
+      M226
+    else
+      abort "No filament movement detected during unload"
+    M99
+
 if var.pulse_count != global.ercf_pulse_count
   M98 P"ercf/lib/unload-selector.g"
 

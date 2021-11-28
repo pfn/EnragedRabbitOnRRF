@@ -1,0 +1,3 @@
+set global.ercf_selector_pos = -1
+set global.ercf_extruder_loaded = false
+M98 P"ercf/lib/save-selector-state.g"

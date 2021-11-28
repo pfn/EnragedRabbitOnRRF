@@ -16,7 +16,7 @@ while var.pulse_count != global.ercf_pulse_count
   M98 P{global.ercf_tmp_file}
 
 if var.retracted
-  echo >{global.ercf_tmp_file} "G1 F" ^ global.ercf_extruder_slow_speed ^ " " ^ global.ercf_extruder_axis ^ "-20"
+  echo >{global.ercf_tmp_file} "G1 F" ^ global.ercf_extruder_slow_speed ^ " " ^ global.ercf_extruder_axis ^ "-25"
   echo >>{global.ercf_tmp_file} "G92 " ^ global.ercf_extruder_axis ^ "0"
   echo >>{global.ercf_tmp_file} "M84 " ^ global.ercf_extruder_axis
   M98 P"ercf/lib/execute-tmp.g"

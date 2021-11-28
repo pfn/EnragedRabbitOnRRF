@@ -1,19 +1,5 @@
-M98 P"ercf/lib/home.g"
-M98 P"ercf/lib/select.g" S1
-M98 P"ercf/lib/load.g"
+M98 P"ercf/lib/load-tool.g" T2
 G4 S1
-M98 P"ercf/lib/unload.g"
-
-
-M98 P"ercf/lib/select.g" S3
-M98 P"ercf/lib/load.g"
+M98 P"ercf/lib/load-tool.g" T1
 G4 S1
-M98 P"ercf/lib/unload.g"
-
-
-M98 P"ercf/lib/select.g" S4
-M98 P"ercf/lib/load.g"
-G4 S1
-M98 P"ercf/lib/unload.g"
-
-M98 P"ercf/lib/home.g"
+M98 P"ercf/lib/load-tool.g" T0
