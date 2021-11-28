@@ -2,7 +2,7 @@
 
 WIP set of configuration and macros to enable running the ERCF on RRF
 
-[![Youtube Thumbnail](http://img.youtube.com/vi/lP2_jpP7SuM/0.jpg)](http://www.youtube.com/watch?v=lP2_jpP7SuM "ERCF on RRF")
+[![Youtube Thumbnail](http://img.youtube.com/vi/N4DiK5DVftM/0.jpg)](http://www.youtube.com/watch?v=N4DiK5DVftM "ERCF on RRF")
 
 Errors occurring in the video are the result of a non-straight D shaft.
 The project is basically on hold until replacements arrive.
