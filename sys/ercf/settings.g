@@ -11,6 +11,7 @@ set global.ercf_bowden_length = 785
 set global.ercf_extruder_gear_diameter = 11.4 ; orbiter filament gear diameter
 set global.ercf_extruder_slow_speed = 2400
 set global.ercf_extruder_fast_speed = 9000
+set global.ercf_extruder_load_speed = 1200
 set global.ercf_extruder_current = 800
 set global.ercf_selector_current = 565
 set global.ercf_extruder_park = 20
