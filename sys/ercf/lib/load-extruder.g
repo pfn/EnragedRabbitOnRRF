@@ -4,6 +4,7 @@ if global.ercf_extruder_loaded
 
 G91
 M98 P"ercf/lib/engage.g"
+M98 P"ercf/lib/pulse-counting.g"
 
 echo >{global.ercf_tmp_file} "G92 " ^ global.ercf_extruder_axis ^ "0"
 echo >>{global.ercf_tmp_file} "G1 F" ^ global.ercf_extruder_slow_speed ^ " " ^ global.ercf_extruder_axis ^ "-2"
@@ -25,3 +26,4 @@ T{global.ercf_tool_number}
 M98 P"ercf/lib/execute-tmp.g"
 G90
 M98 P"ercf/lib/save-selector-state.g"
+M98 P"ercf/lib/filament-sensing.g"
