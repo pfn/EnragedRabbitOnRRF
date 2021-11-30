@@ -26,3 +26,5 @@ else
 
 G90
 M98 P"ercf/lib/disengage.g"
+set global.ercf_extruder_loaded = false
+M98 P"ercf/lib/save-selector-state.g"

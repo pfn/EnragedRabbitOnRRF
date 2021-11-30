@@ -3,9 +3,13 @@ M98 R1
 if state.macroRestarted
   if global.ercf_extruder_loaded
     if state.status == "processing"
-      M291 P"Filament not yet unloaded" "Filament Unload" S0
+      var errmsg = "Filament not yet unloaded: T" ^ global.ercf_selector_pos
+      echo var.errmsg
+      M291 P{var.errmsg} "Unload Filament" S1 T0
+      M98 R1
       M226
-  M99
+  else
+    M99
 
 if !exists(param.F) && !global.ercf_extruder_loaded && global.ercf_selector_pos != -1
   echo "Filament is not loaded"
@@ -48,12 +52,14 @@ while global.ercf_pulse_count < var.expected
   set var.pulse_count = global.ercf_pulse_count
   M98 P{global.ercf_tmp_file}
   if var.pulse_count == global.ercf_pulse_count
+    var errmsg = "No filament movement detected during unload: T" ^ global.ercf_selector_pos
+    echo var.errmsg
     if state.status == "processing"
-      M291 P"No filament movement detected during unload" R"Filament Load" S1
+      M291 P{var.errmsg} R"Filament Load" S1 T0
+      M98 R1
       M226
     else
-      abort "No filament movement detected during unload"
-    M99
+      abort var.errmsg
 
 if var.pulse_count != global.ercf_pulse_count
   M98 P"ercf/lib/unload-selector.g"
