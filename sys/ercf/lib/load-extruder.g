@@ -1,4 +1,4 @@
-if global.ercf_extruder_loaded
+if global.ercf_extruder_loaded && (!exists(param.F) || param.F != 1)
   echo "Cannot load extruder while already loaded; restarted=" ^ state.macroRestarted
   M99
 

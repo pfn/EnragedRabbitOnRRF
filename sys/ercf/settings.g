@@ -7,7 +7,7 @@ M584 V20.0 R1 S0 P3
 set global.ercf_selector_axis = "U"
 set global.ercf_extruder_axis = "V"
 
-set global.ercf_bowden_length = 785
+set global.ercf_bowden_length = 650
 set global.ercf_extruder_gear_diameter = 11.4 ; orbiter filament gear diameter
 set global.ercf_extruder_slow_speed = 2400
 set global.ercf_extruder_fast_speed = 9000
