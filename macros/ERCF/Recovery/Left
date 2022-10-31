@@ -1,0 +1,19 @@
+M584 P{#move.axes}
+
+var axis = -1
+while var.axis == -1
+  if iterations >= #move.axes
+    break
+  if move.axes[iterations].letter == global.ercf_selector_axis
+    set var.axis = iterations
+
+if var.axis == -1
+  abort "Cannot find selector axis"
+
+echo >{global.ercf_tmp_file} "G92 " ^ global.ercf_selector_axis ^ move.axes[var.axis].userPosition
+echo >>{global.ercf_tmp_file} "G1 F6000 " ^ global.ercf_selector_axis ^ "-0.5"
+
+G91
+M98 P"ercf/lib/execute-tmp.g"
+G90
+M584 P{#move.axes - 2}

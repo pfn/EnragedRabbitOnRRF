@@ -52,6 +52,7 @@ while global.ercf_pulse_count < var.expected
   set var.pulse_count = global.ercf_pulse_count
   M98 P{global.ercf_tmp_file}
   if var.pulse_count == global.ercf_pulse_count
+    M98 P"ercf/lib/disengage.g"
     var errmsg = "No filament movement detected during unload: T" ^ global.ercf_selector_pos
     echo var.errmsg
     if state.status == "processing"

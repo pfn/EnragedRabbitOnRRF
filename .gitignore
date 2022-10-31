@@ -6,6 +6,7 @@ sys/accelerometer/
 sys/k/
 sys/*.csv
 sys/*.json
+filaments/
 *.bin
 *.gz
 *.bak
