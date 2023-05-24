@@ -35,18 +35,18 @@ if !exists(global.ercf_settings_loaded)
   global ercf_servo_pin = "exp.heater3"
   global ercf_servo_num = 0
   global ercf_servo_disengage = 0
-  global ercf_servo_engage = 90
+  global ercf_servo_engage = 140
   ;
   ; filament block positions, additional blocks can be added and removed
   ; additional definitions can go here or in settings.g
   ; removed blocks should be commented/deleted out of this file
   ;
-  global ercf_slot0_pos = 2
-  global ercf_slot1_pos = 23
-  global ercf_slot2_pos = 45
-  global ercf_slot3_pos = 71
-  global ercf_slot4_pos = 92
-  global ercf_slot5_pos = 113
+  global ercf_slot0_pos = 1
+  global ercf_slot1_pos = 22
+  global ercf_slot2_pos = 43
+  global ercf_slot3_pos = 69
+  global ercf_slot4_pos = 90
+  global ercf_slot5_pos = 111
   ;
   ; filament sensor settings
   ;
