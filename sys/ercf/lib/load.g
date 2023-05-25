@@ -67,9 +67,12 @@ while global.ercf_pulse_count < var.expected
     echo "No filament movement detected during load: T" ^ global.ercf_selector_pos
     break
 
-echo >{global.ercf_tmp_file} "G1 F" ^ global.ercf_extruder_slow_speed ^ " " ^ global.ercf_extruder_axis ^ "5"
+echo >{global.ercf_tmp_file} "G1 F" ^ global.ercf_extruder_slow_speed ^ " " ^ global.ercf_extruder_axis ^ "20"
 echo >>{global.ercf_tmp_file} "M400"
-while var.pulse_count != global.ercf_pulse_count
+; filament bucking from stalling the drive motor while loading can cause
+; a jump in pulses, try to filter for those
+while global.ercf_pulse_count - var.pulse_count > 10
+  echo "Loaded " ^ {global.ercf_pulse_count - var.pulse_count} ^ " pulses"
   set var.pulse_count = global.ercf_pulse_count
   M98 P{global.ercf_tmp_file}
 

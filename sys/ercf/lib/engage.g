@@ -3,6 +3,7 @@ if !global.ercf_servo_engaged
   G4 P150
   M98 P"ercf/lib/buzz.g"
   M400
-  M42 P{global.ercf_servo_num} S0
+  ; do not power off after engage
+  ;M42 P{global.ercf_servo_num} S0
 
 set global.ercf_servo_engaged = true
